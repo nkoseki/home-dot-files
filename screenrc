@@ -1,0 +1,40 @@
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+
+#ssh先とローカルで変える
+escape ^Jj
+
+# use bright colors for bold text.
+attrcolor b ".I"
+
+# enable background-color-erase setting 
+#defbce on
+
+# enable 256 color
+#termcapinfo xterm* 'Co#256:AB=¥E[48;5;%dm:AF=¥E[38;5;%dm'
+
+# set statusbar
+#shelltitle "$ |$HOSTNAME"
+# format                   time                   title selected title         load    
+
+## スクロール行数
+defscrollback 10000
+
+## マウススクロール有効
+termcapinfo xterm* ti@:te@ 
+
+#screenを起動したディレクトリにlogsがないといけない
+#deflog on
+#logfile "logs/screen-%Y%m%d-%n.log"
+
+#緑
+#hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gk} %-w%{= GK}%n %t%{-}%+w %=%{gk}%l"
+#青
+#hardstatus alwayslastline "%{= ck}[%m/%d %02c:%s] %{ck} %-w%{= CK}%n %t%{-}%+w %=%{ck}%l"
+#黄色
+#hardstatus alwayslastline "%{= yk}[%m/%d %02c:%s] %{yk} %-w%{= YK}%n %t%{-}%+w %=%{yk}%l"
+# 秒まで表示すると、ログが汚くなるので分単位にする
+hardstatus alwayslastline "%{= yk}[%m/%d %02c] %{yk} %-w%{= YK}%n %t%{-}%+w %=%{yk}%l"
+hardstatus off
+
